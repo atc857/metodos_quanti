@@ -1,0 +1,20 @@
+# Ambiente
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Configuração local (caminhos pessoais)
+.env
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Dados e materiais que ficam fora do repositório
+dados/
+saida/
+livros/
+conteudo/
+*.parquet
+*.csv
+*.pdf
+*.pptx
