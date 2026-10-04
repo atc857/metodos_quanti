@@ -2,6 +2,8 @@
 
 Repositório público com o código do curso de **Métodos Quantitativos / Tópicos de Análise Quantitativa** para gestores do CBMDF (CAEO/CAO): o notebook que os alunos usam e os scripts que preparam a base. O material de preparação das aulas (conteúdo por módulo, livros, slides) e os dados ficam **fora do repositório**; caminhos e fases do projeto estão no `CLAUDE.local.md` (não versionado), quando existir.
 
+**Fio condutor:** *quanto as notas do ENEM variam com a renda, o tipo de escola, o território, o sexo e a cor/raça? De que tamanho são essas diferenças, quem fica fora da medição, e com que segurança podemos afirmar, sem confundir associação com causa?* Cada módulo responde a um pedaço dessa pergunta (tabela na seção 5.0 do `ROTEIRO_ESTUDOS.md`). Exemplos fora do fio (moeda, binomial dos militares, MT ~ CN, treineiros, Anscombe) são mantidos de propósito, para introduzir conceitos. Cor/raça é autodeclarada; recortes por cor/raça só em nível nacional ou de grandes grupos.
+
 **Decisão de projeto:** não há módulo separado de IA. A IA é integrada em **todos** os módulos, com os **prompts** e as **boas práticas** para resultados precisos e com validade científica. O protocolo de 7 regras está no Módulo 0 (Parte 0 do notebook).
 
 ## Público e tom
@@ -63,7 +65,8 @@ Fonte: INEP, <https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/mi
 - **`TP_ESCOLA` só é respondida por concluintes de 2023** (`TP_ST_CONCLUSAO == 2`); 64,4% constam como "1 = Não respondeu". `TP_DEPENDENCIA_ADM_ESC` tem o mesmo recorte (24,4% da base).
 - Zeros: 117.829 redações com 0, todas com `TP_STATUS_REDACAO ≠ 1` (zero administrativo). Nas objetivas (16.638 em MT, 16.547 em CN, 5.612 em CH, 2.169 em LC), **100% são cartões sem nenhuma resposta marcada** (conferido em `TX_RESPOSTAS_*` no CSV); não há notas entre 0 e ≈ 290. Redação em múltiplos de 20.
 - **Os microdados de 2023 não têm `CO_ESCOLA`** (o ENEM 2024 das turmas anteriores tinha).
-- A presença cresce com a renda (58,5% na faixa A a ≈ 84% nas altas): viés de seleção.
+- A presença cresce com a renda (58,5% na faixa A a ≈ 84% nas altas): viés de seleção. Varia também por cor/raça (73,6% brancos, 62,5% pretos, 58,8% indígenas) e é igual entre os sexos.
+- **Sexo muda de sinal conforme a prova:** homens +46,5 em MT, mulheres +36,4 na redação (notebook 1.12). **Cor/raça:** brancos × pretos em MT, d = 0,63; com renda, escola e sexo na regressão, a diferença cai de −73 para −35 pontos (notebook 5.4). η² em MT: renda 23,1%, cor/raça 7,0%, sexo 3,3%.
 - **Simpson real:** na base de análise, treineiros têm média de MT maior no agregado (549,4 × 538,5) e menor em todas as faixas etárias (notebook 3.8).
 - Com n em milhões, qualquer teste dá "significativo": reportar **tamanho de efeito** e IC, e ler o IC contra a margem de relevância. Federais × privadas em LC: d = 0,15 (abaixo do relevante), mas 91% das amostras de n = 1.000 dão p < 0,05.
 - `pingouin.ttest` reporta `power` calculado com o d observado (poder *post hoc*); não usar. Planejar n com `statsmodels` (`TTestIndPower`).
@@ -77,7 +80,7 @@ Fonte: INEP, <https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/mi
 
 ## Convenções de trabalho
 
-- **Reprodutibilidade:** todo número ou gráfico mostrado em aula sai do notebook (ou de `src/`), com semente fixa (`np.random.default_rng(2023)`). Números fora do notebook (ex.: parâmetro c da TRI, verificação dos cartões em branco) são marcados como consulta avulsa.
+- **Reprodutibilidade:** todo número ou gráfico mostrado em aula sai do notebook (ou de `src/`), com semente fixa (`np.random.default_rng(2023)`). Células novas inseridas no meio do notebook não devem usar `rng` (isso mudaria todos os sorteios seguintes); para não renumerar, acrescentar seções no fim da parte (ex.: 1.11, 1.12, 2.4, 5.7). Números fora do notebook (ex.: parâmetro c da TRI, verificação dos cartões em branco) são marcados como consulta avulsa.
 - **IA no notebook:** todo prompt mostrado deve ter (a) contexto e restrições explícitos, (b) pedido de código e não de números, (c) pedido de premissas e limitações, (d) a **verificação independente** que o analista faz depois. Não afirmar capacidades de produtos de IA sem fonte primária; a referência de prompting usada é a documentação da Anthropic.
 - **Gráficos:** títulos que dizem a conclusão, eixos rotulados com unidade, sem 3D nem eixos truncados. Paleta consistente; usar a skill `dataviz`.
 - **Antes de commitar:** conferir `git status`; nada de dados, PDFs, `.env` ou caminhos pessoais em saídas do notebook.

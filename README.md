@@ -8,14 +8,16 @@ Notebook da disciplina de Métodos Quantitativos / Tópicos de Análise Quantita
 
 [`notebooks/enem2023_aula.ipynb`](notebooks/enem2023_aula.ipynb)
 
+**Fio condutor:** quanto as notas do ENEM variam com a renda, o tipo de escola, o território, o sexo e a cor/raça? De que tamanho são essas diferenças, quem fica fora da medição, e com que segurança podemos afirmar, sem confundir associação com causa? Cada parte responde a um pedaço dessa pergunta; alguns exemplos ficam fora dela de propósito, para introduzir conceitos.
+
 | Parte | Módulo | Assunto |
 |---|---|---|
 | 0 | 0 | Preparação, leitura da base, registro da execução, rótulos do dicionário, modelo de prompt para IA |
-| 1 | 1–2 | Estatística descritiva e análise exploratória: perfil, nulos, zeros, base de análise, gráficos |
-| 2 | 3 | Probabilidade e distribuições: normal, Teorema Central do Limite, binomial |
+| 1 | 1–2 | Estatística descritiva e análise exploratória: perfil, nulos, zeros, base de análise, gráficos honestos, sexo e cor/raça |
+| 2 | 3 | Probabilidade e distribuições: normal, Teorema Central do Limite, binomial, taxa de base |
 | 3 | 4 | Amostragem e intervalos de confiança: planos amostrais, vieses, tamanho de amostra, bootstrap |
 | 4 | 5 | Testes de hipóteses: t de Welch, ANOVA, qui-quadrado, tamanho do efeito |
-| 5 | 6 | Correlação e regressão: resíduos, regressão múltipla, treino/teste, IDHM |
+| 5 | 6 | Correlação e regressão: resíduos, regressão múltipla, treino/teste, IDHM, quarteto de Anscombe |
 
 ## Como usar
 
