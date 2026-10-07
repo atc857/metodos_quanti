@@ -80,7 +80,7 @@ Fonte: INEP, <https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/mi
 
 ## Convenções de trabalho
 
-- **Reprodutibilidade:** todo número ou gráfico mostrado em aula sai do notebook (ou de `src/`), com semente fixa (`np.random.default_rng(2023)`). Células novas inseridas no meio do notebook não devem usar `rng` (isso mudaria todos os sorteios seguintes); para não renumerar, acrescentar seções no fim da parte (ex.: 1.11, 1.12, 2.4, 5.7). Números fora do notebook (ex.: parâmetro c da TRI, verificação dos cartões em branco) são marcados como consulta avulsa.
+- **Reprodutibilidade:** todo número ou gráfico mostrado em aula sai do notebook (ou de `src/`), com semente fixa (`np.random.default_rng(2023)`). Células novas inseridas no meio do notebook não devem usar `rng` (isso mudaria todos os sorteios seguintes); se precisarem sortear, usam um gerador próprio (`np.random.default_rng(SEMENTE)`). Para não renumerar, acrescentar seções no fim da parte (ex.: 1.11, 1.12, 2.4). Números fora do notebook (ex.: parâmetro c da TRI, verificação dos cartões em branco) são marcados como consulta avulsa.
 - **IA no notebook:** todo prompt mostrado deve ter (a) contexto e restrições explícitos, (b) pedido de código e não de números, (c) pedido de premissas e limitações, (d) a **verificação independente** que o analista faz depois. Não afirmar capacidades de produtos de IA sem fonte primária; a referência de prompting usada é a documentação da Anthropic.
 - **Gráficos:** títulos que dizem a conclusão, eixos rotulados com unidade, sem 3D nem eixos truncados. Paleta consistente; usar a skill `dataviz`.
 - **Antes de commitar:** conferir `git status`; nada de dados, PDFs, `.env` ou caminhos pessoais em saídas do notebook.

@@ -17,7 +17,7 @@ Notebook da disciplina de Métodos Quantitativos / Tópicos de Análise Quantita
 | 2 | 3 | Probabilidade e distribuições: normal, Teorema Central do Limite, binomial, taxa de base |
 | 3 | 4 | Amostragem e intervalos de confiança: planos amostrais, vieses, tamanho de amostra, bootstrap |
 | 4 | 5 | Testes de hipóteses: t de Welch, ANOVA, qui-quadrado, tamanho do efeito |
-| 5 | 6 | Correlação e regressão: resíduos, regressão múltipla, treino/teste, IDHM, quarteto de Anscombe |
+| 5 | 6 | Correlação e regressão: resíduos, renda ordinal, regressão múltipla, quarteto de Anscombe |
 
 ## Como usar
 
