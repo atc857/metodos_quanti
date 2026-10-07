@@ -4,7 +4,7 @@ Repositório público com o código do curso de **Métodos Quantitativos / Tópi
 
 **Fio condutor:** *quanto as notas do ENEM variam com a renda, o tipo de escola, o território, o sexo e a cor/raça? De que tamanho são essas diferenças, quem fica fora da medição, e com que segurança podemos afirmar, sem confundir associação com causa?* Cada módulo responde a um pedaço dessa pergunta (tabela na seção 5.0 do `ROTEIRO_ESTUDOS.md`). Exemplos fora do fio (moeda, binomial dos militares, MT ~ CN, treineiros, Anscombe) são mantidos de propósito, para introduzir conceitos. Cor/raça é autodeclarada; recortes por cor/raça só em nível nacional ou de grandes grupos.
 
-**Decisão de projeto:** não há módulo separado de IA. A IA é integrada em **todos** os módulos, com os **prompts** e as **boas práticas** para resultados precisos e com validade científica. O protocolo de 7 regras está no Módulo 0 (Parte 0 do notebook).
+**Decisão de projeto:** não há módulo separado de IA. A IA é integrada em **todos** os módulos, com os **prompts** e as **boas práticas** para resultados precisos e com validade científica. O protocolo de 7 regras está no Módulo 1 (Parte 0 do notebook). Os módulos são numerados de 1 a 7 no notebook e nos slides.
 
 ## Público e tom
 
@@ -21,7 +21,7 @@ metodos_quanti/
 ├── CLAUDE.md                           # este arquivo (público)
 ├── .env.example                        # modelo do .env (caminhos dos dados; o .env não é versionado)
 ├── pyproject.toml / uv.lock            # ambiente uv
-├── notebooks/enem2023_aula.ipynb       # notebook do curso (Partes 0–5 = Módulos 0–6); fonte dos números
+├── notebooks/enem2023_aula.ipynb       # notebook do curso (Partes 0–5 = Módulos 1–7); fonte dos números
 └── src/
     ├── caminhos.py                     # lê MQ_DADOS e MQ_MICRODADOS do ambiente
     ├── converter_parquet.py            # CSV do INEP → enem2023.parquet
@@ -45,7 +45,7 @@ Fonte: INEP, <https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/mi
 
 **Base reduzida da aula:** `enem2023_aula.parquet` (55 MB, `src/gerar_base_aula.py`): 25 colunas, todos os 3.933.955 inscritos, sem `NU_INSCRICAO`. É o que o notebook lê.
 
-**Base de análise do curso** (notebook 1.6), usada nos Módulos 3–6: presentes nas 4 provas objetivas, `TP_STATUS_REDACAO == 1` e nenhuma prova objetiva com nota 0 → **2.569.190 participantes** (65,3% dos inscritos); MT: μ = 540,60, σ = 124,91. Análises de presença usam todos os inscritos.
+**Base de análise do curso** (notebook 1.6), usada nos Módulos 4–7: presentes nas 4 provas objetivas, `TP_STATUS_REDACAO == 1` e nenhuma prova objetiva com nota 0 → **2.569.190 participantes** (65,3% dos inscritos); MT: μ = 540,60, σ = 124,91. Análises de presença usam todos os inscritos.
 
 **Regras de manuseio**
 - **Nunca commitar o CSV nem os Parquets.** A base reduzida vai só como anexo de Release.
@@ -62,7 +62,7 @@ Fonte: INEP, <https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/mi
 
 **Armadilhas já confirmadas nos dados (usar em aula)**
 - Nota é **vazia** exatamente para quem não esteve presente (nota MT preenchida = 2.692.427 = presentes). Filtrar `TP_PRESENCA_* == 1`.
-- **`TP_ESCOLA` só é respondida por concluintes de 2023** (`TP_ST_CONCLUSAO == 2`); 64,4% constam como "1 = Não respondeu". `TP_DEPENDENCIA_ADM_ESC` tem o mesmo recorte (24,4% da base).
+- **`TP_ESCOLA` só é respondida por concluintes de 2023** (`TP_ST_CONCLUSAO == 2`); 64,4% constam como "1 = Não respondeu". `TP_DEPENDENCIA_ADM_ESC` é mais restrita (24,4% da base): falta também para 442.658 concluintes de 2023 (31,6%; 35,4% dos que declararam escola pública e 12,5% dos de privada), então "federal × privada" é um subconjunto não aleatório dos concluintes (notebook 1.3).
 - Zeros: 117.829 redações com 0, todas com `TP_STATUS_REDACAO ≠ 1` (zero administrativo). Nas objetivas (16.638 em MT, 16.547 em CN, 5.612 em CH, 2.169 em LC), **100% são cartões sem nenhuma resposta marcada** (conferido em `TX_RESPOSTAS_*` no CSV); não há notas entre 0 e ≈ 290. Redação em múltiplos de 20.
 - **Os microdados de 2023 não têm `CO_ESCOLA`** (o ENEM 2024 das turmas anteriores tinha).
 - A presença cresce com a renda (58,5% na faixa A a ≈ 84% nas altas): viés de seleção. Varia também por cor/raça (73,6% brancos, 62,5% pretos, 58,8% indígenas) e é igual entre os sexos.

@@ -12,12 +12,12 @@ Notebook da disciplina de Métodos Quantitativos / Tópicos de Análise Quantita
 
 | Parte | Módulo | Assunto |
 |---|---|---|
-| 0 | 0 | Preparação, leitura da base, registro da execução, rótulos do dicionário, modelo de prompt para IA |
-| 1 | 1–2 | Estatística descritiva e análise exploratória: perfil, nulos, zeros, base de análise, gráficos honestos, sexo e cor/raça |
-| 2 | 3 | Probabilidade e distribuições: normal, Teorema Central do Limite, binomial, taxa de base |
-| 3 | 4 | Amostragem e intervalos de confiança: planos amostrais, vieses, tamanho de amostra, bootstrap |
-| 4 | 5 | Testes de hipóteses: t de Welch, ANOVA, qui-quadrado, tamanho do efeito |
-| 5 | 6 | Correlação e regressão: resíduos, renda ordinal, regressão múltipla, quarteto de Anscombe |
+| 0 | 1 | Preparação, leitura da base, registro da execução, rótulos do dicionário, modelo de prompt para IA |
+| 1 | 2–3 | Estatística descritiva e análise exploratória: perfil, nulos, zeros, base de análise, gráficos honestos, sexo e cor/raça |
+| 2 | 4 | Probabilidade e distribuições: normal, Teorema Central do Limite, binomial, taxa de base |
+| 3 | 5 | Amostragem e intervalos de confiança: planos amostrais, vieses, tamanho de amostra, bootstrap |
+| 4 | 6 | Testes de hipóteses: t de Welch, ANOVA, qui-quadrado, tamanho do efeito |
+| 5 | 7 | Correlação e regressão: resíduos, renda ordinal, regressão múltipla, quarteto de Anscombe |
 
 ## Como usar
 
