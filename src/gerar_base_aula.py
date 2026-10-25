@@ -1,4 +1,4 @@
-"""Gera a base reduzida usada no notebook de aula (notebooks/enem2023_aula.ipynb).
+"""Gera a base reduzida usada no notebook de aula (notebooks/enem2023_curso.ipynb).
 
 Parte de enem2023.parquet (gerado por converter_parquet.py, na pasta MQ_DADOS) e mantém só as colunas
 usadas em aula, sem NU_INSCRICAO. Todos os 3.933.955 inscritos ficam na base (inclusive

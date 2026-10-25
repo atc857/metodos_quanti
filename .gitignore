@@ -18,3 +18,6 @@ conteudo/
 *.csv
 *.pdf
 *.pptx
+
+# Notebook anterior (substituído por notebooks/enem2023_curso.ipynb; fica só na máquina local)
+notebooks/enem2023_aula.ipynb

@@ -1,23 +1,24 @@
 # Métodos Quantitativos com os microdados do ENEM 2023
 
-Notebook da disciplina de Métodos Quantitativos / Tópicos de Análise Quantitativa para gestores do CBMDF (CAEO/CAO). Cada parte acompanha um módulo da aula, com dados reais e o uso de IA com verificação.
+Notebook da disciplina de Métodos Quantitativos / Tópicos de Análise Quantitativa para gestores do CBMDF (CAEO/CAO). Cada parte acompanha um módulo da aula, com dados reais e, em cada etapa, o prompt para a IA, os comandos que ele produz e a verificação independente.
 
-[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atc857/metodos_quanti/blob/main/notebooks/enem2023_aula.ipynb)
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atc857/metodos_quanti/blob/main/notebooks/enem2023_curso.ipynb)
 
 ## O que tem no notebook
 
-[`notebooks/enem2023_aula.ipynb`](notebooks/enem2023_aula.ipynb)
+[`notebooks/enem2023_curso.ipynb`](notebooks/enem2023_curso.ipynb)
 
 **Fio condutor:** quanto as notas do ENEM variam com a renda, o tipo de escola, o território, o sexo e a cor/raça? De que tamanho são essas diferenças, quem fica fora da medição, e com que segurança podemos afirmar, sem confundir associação com causa? Cada parte responde a um pedaço dessa pergunta; alguns exemplos ficam fora dela de propósito, para introduzir conceitos.
 
-| Parte | Módulo | Assunto |
-|---|---|---|
-| 0 | 1 | Preparação, leitura da base, registro da execução, rótulos do dicionário, modelo de prompt para IA |
-| 1 | 2–3 | Estatística descritiva e análise exploratória: perfil, nulos, zeros, base de análise, gráficos honestos, sexo e cor/raça |
-| 2 | 4 | Probabilidade e distribuições: normal, Teorema Central do Limite, binomial, taxa de base |
-| 3 | 5 | Amostragem e intervalos de confiança: planos amostrais, vieses, tamanho de amostra, bootstrap |
-| 4 | 6 | Testes de hipóteses: t de Welch, ANOVA, qui-quadrado, tamanho do efeito |
-| 5 | 7 | Correlação e regressão: resíduos, renda ordinal, regressão múltipla, quarteto de Anscombe |
+| Módulo | Assunto |
+|---|---|
+| 1 | A base do ENEM 2023 e como se chegou à base reduzida; protocolo de IA |
+| 2 | Análise exploratória e limpeza: nulos, a armadilha da escola, zeros, base de análise |
+| 3 | Estatística descritiva: Matemática por tipo de escola, sexo e cor/raça, gráfico honesto |
+| 4 | Probabilidade: condicional e taxa de base, binomial, normal, Teorema Central do Limite |
+| 5 | Amostragem: erro padrão, intervalo de confiança, tamanho da amostra, vieses |
+| 6 | Testes de hipóteses, um por seção, do planejamento ao relato: t de Welch, ANOVA e Tukey, qui-quadrado |
+| 7 | Correlação e regressão: resíduos, quarteto de Anscombe, regressão múltipla |
 
 ## Como usar
 
