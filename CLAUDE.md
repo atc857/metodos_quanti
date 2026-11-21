@@ -1,6 +1,6 @@
 # CLAUDE.md — Métodos Quantitativos (CBMDF)
 
-Repositório público com o código do curso de **Métodos Quantitativos / Tópicos de Análise Quantitativa** para gestores do CBMDF (CAEO/CAO): o notebook que os alunos usam e os scripts que preparam a base. O material de preparação das aulas (conteúdo por módulo, livros, slides) e os dados ficam **fora do repositório**; caminhos e fases do projeto estão no `CLAUDE.local.md` (não versionado), quando existir.
+Repositório público com o código do curso de **Métodos Quantitativos / Tópicos de Análise Quantitativa** para gestores do CBMDF (CAEO/CAO): o notebook que os alunos usam e os scripts que preparam a base. O material de preparação das aulas (conteúdo por módulo, livros, os `.pptx` e o gerador dos slides) e os dados ficam **fora do repositório**; só o PDF da versão válida dos slides é publicado; caminhos e fases do projeto estão no `CLAUDE.local.md` (não versionado), quando existir.
 
 **Fio condutor:** *quanto as notas do ENEM variam com a renda, o tipo de escola, o território, o sexo e a cor/raça? De que tamanho são essas diferenças, quem fica fora da medição, e com que segurança podemos afirmar, sem confundir associação com causa?* Cada módulo responde a um pedaço dessa pergunta (tabela na seção 5.0 do `ROTEIRO_ESTUDOS.md`). Exemplos fora do fio (moeda, binomial dos militares, MT ~ CN, treineiros, Anscombe) são mantidos de propósito, para introduzir conceitos. Cor/raça é autodeclarada; recortes por cor/raça só em nível nacional ou de grandes grupos.
 
@@ -21,7 +21,9 @@ metodos_quanti/
 ├── CLAUDE.md                           # este arquivo (público)
 ├── .env.example                        # modelo do .env (caminhos dos dados; o .env não é versionado)
 ├── pyproject.toml / uv.lock            # ambiente uv
-├── notebooks/enem2023_curso.ipynb      # notebook do curso (Módulos 1–7); fonte dos números
+├── notebooks/enem2023_curso.ipynb      # notebook do curso (Módulos 1–7); fonte dos números e dos prompts
+├── notebooks/enem2023_analise.ipynb    # o percurso do analista (Etapas 0–9), alinhado aos slides v11; só Colab
+├── slides/Analise_Quantitativa_CAEO-2026_v11.pdf   # slides de referência (versão válida; exceção no .gitignore)
 └── src/
     ├── caminhos.py                     # lê MQ_DADOS e MQ_MICRODADOS do ambiente
     ├── converter_parquet.py            # CSV do INEP → enem2023.parquet
@@ -32,6 +34,8 @@ metodos_quanti/
 Ignorados pelo git: `.venv/`, `.env`, `CLAUDE.local.md`, `dados/`, `saida/` (figuras geradas pelo notebook), e qualquer `*.parquet`, `*.csv`, `*.pdf`, `*.pptx`.
 
 **Notebook:** **um único notebook** com uma parte por módulo. Para regenerar números e figuras: `uv run --env-file .env jupyter nbconvert --to notebook --execute --inplace notebooks/enem2023_curso.ipynb` (~55 s). O notebook não importa nada de `src/`, para rodar sozinho no Colab.
+
+**Notebook do analista** (`enem2023_analise.ipynb`): estudo de caso didático (texto simples, prompt + verificação independente em cada seção, código comentado, funções definidas junto do primeiro uso). Lê a base **só** da `URL_BASE`, não grava arquivos e não cita pastas, scripts nem o outro notebook; a referência é o PDF dos slides v11. Os prompts que estão nos slides têm o texto idêntico ao do `enem2023_curso.ipynb`, e os sorteios repetem o código dele (mesmos números dos slides). O relatório da Etapa 9 é texto fixo: ao mudar o notebook, conferir os números do relatório nas saídas.
 
 **Onde o notebook acha a base:** `MQ_DADOS/enem2023_aula.parquet` (variável de ambiente) → `dados/enem2023_aula.parquet` na raiz → `URL_BASE` (anexo da Release `base-v1` do GitHub, usado no Colab). Ao regenerar a base, publicar de novo o anexo da Release.
 

@@ -20,6 +20,16 @@ Notebook da disciplina de Métodos Quantitativos / Tópicos de Análise Quantita
 | 6 | Testes de hipóteses, um por seção, do planejamento ao relato: t de Welch, ANOVA e Tukey, qui-quadrado |
 | 7 | Correlação e regressão: resíduos, quarteto de Anscombe, regressão múltipla |
 
+## O percurso do analista
+
+[`notebooks/enem2023_analise.ipynb`](notebooks/enem2023_analise.ipynb) [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atc857/metodos_quanti/blob/main/notebooks/enem2023_analise.ipynb)
+
+Um estudo de caso de ponta a ponta com os mesmos exemplos dos slides: o analista recebe a pergunta da diretoria, escreve o plano, confere e explora a base, limpa, descreve as cinco dimensões do fio condutor, lê probabilidades, trabalha com amostras, faz os três testes, ajusta a regressão e termina com o relatório. Cada etapa traz a explicação em linguagem simples, o prompt que levaria ao código, a verificação independente e o código comentado.
+
+## Slides
+
+[Análise Quantitativa CAEO-2026, v11 (PDF)](slides/Analise_Quantitativa_CAEO-2026_v11.pdf)
+
 ## Como usar
 
 **No Google Colab (recomendado):** clique no botão acima. O notebook baixa sozinho a base de dados da [Release `base-v1`](https://github.com/atc857/metodos_quanti/releases/tag/base-v1) (cerca de 55 MB) e roda inteiro em menos de um minuto.
