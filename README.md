@@ -1,60 +1,49 @@
 # Métodos Quantitativos com os microdados do ENEM 2023
 
-Notebook da disciplina de Métodos Quantitativos / Tópicos de Análise Quantitativa para gestores do CBMDF (CAEO/CAO). Cada parte acompanha um módulo da aula, com dados reais e, em cada etapa, o prompt para a IA, os comandos que ele produz e a verificação independente.
+Material da palestra *Metodologia científica: tópicos de análise quantitativa*, para gestores do CBMDF (CAEO). Uma análise só, do zero à regressão, com dados reais e, em cada etapa, o prompt para a IA, o código e a verificação independente.
 
-[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atc857/metodos_quanti/blob/main/notebooks/enem2023_curso.ipynb)
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atc857/metodos_quanti/blob/main/notebooks/enem2023_analise_v12.ipynb)
 
-## O que tem no notebook
+## O problema
 
-[`notebooks/enem2023_curso.ipynb`](notebooks/enem2023_curso.ipynb)
+> Alunos de escola privada tiram **122 pontos a mais** em Matemática do que os de escola pública. **De que tamanho** é essa diferença, **com que segurança** podemos afirmá-la, e **quanto dela permanece** quando levamos em conta renda, sexo e cor/raça?
 
-**Fio condutor:** quanto as notas do ENEM variam com a renda, o tipo de escola, o território, o sexo e a cor/raça? De que tamanho são essas diferenças, quem fica fora da medição, e com que segurança podemos afirmar, sem confundir associação com causa? Cada parte responde a um pedaço dessa pergunta; alguns exemplos ficam fora dela de propósito, para introduzir conceitos.
+O notebook [`notebooks/enem2023_analise_v12.ipynb`](notebooks/enem2023_analise_v12.ipynb) responde a essa pergunta em sete partes, na mesma ordem dos slides:
 
-| Módulo | Assunto |
+| Parte | Pergunta |
 |---|---|
-| 1 | A base do ENEM 2023 e como se chegou à base reduzida; protocolo de IA |
-| 2 | Análise exploratória e limpeza: nulos, a armadilha da escola, zeros, base de análise |
-| 3 | Estatística descritiva: Matemática por tipo de escola, sexo e cor/raça, gráfico honesto |
-| 4 | Probabilidade: condicional e taxa de base, binomial, normal, Teorema Central do Limite |
-| 5 | Amostragem: erro padrão, intervalo de confiança, tamanho da amostra, vieses |
-| 6 | Testes de hipóteses, um por seção, do planejamento ao relato: t de Welch, ANOVA e Tukey, qui-quadrado |
-| 7 | Correlação e regressão: resíduos, quarteto de Anscombe, regressão múltipla |
+| 1 | O problema e o método: de onde vem a manchete e como vamos checá-la (com IA, sob protocolo)? |
+| 2 | Análise exploratória e limpeza: quem está na comparação, e quem ficou de fora? |
+| 3 | Estatística descritiva: de que tamanho é a diferença, descrita com honestidade? |
+| 4 | Probabilidade: como ler uma probabilidade, e quanto do que vemos pode ser acaso? |
+| 5 | Amostragem: se só tivéssemos uma amostra, sorteada como, com que margem de erro, e de que tamanho? |
+| 6 | Testes de hipóteses: a diferença é real, e importa? E entre as quatro dependências administrativas? |
+| 7 | Regressão: quanto dos 122 pontos permanece com renda, sexo e cor/raça? E o relatório. |
 
-## O percurso do analista
-
-[`notebooks/enem2023_analise.ipynb`](notebooks/enem2023_analise.ipynb) [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atc857/metodos_quanti/blob/main/notebooks/enem2023_analise.ipynb)
-
-Um estudo de caso de ponta a ponta com os mesmos exemplos dos slides: o analista recebe a pergunta da diretoria, escreve o plano, confere e explora a base, limpa, descreve as cinco dimensões do fio condutor, lê probabilidades, trabalha com amostras, faz os três testes, ajusta a regressão e termina com o relatório. Cada etapa traz a explicação em linguagem simples, o prompt que levaria ao código, a verificação independente e o código comentado.
-
-## Slides
-
-[Análise Quantitativa CAEO-2026, v11 (PDF)](slides/Analise_Quantitativa_CAEO-2026_v11.pdf)
+Os dados são observacionais: tudo o que se mede é **associação**, não efeito.
 
 ## Como usar
 
-**No Google Colab (recomendado):** clique no botão acima. O notebook baixa sozinho a base de dados da [Release `base-v1`](https://github.com/atc857/metodos_quanti/releases/tag/base-v1) (cerca de 55 MB) e roda inteiro em menos de um minuto.
+Clique no botão **Abrir no Colab** acima e depois em *Ambiente de execução → Executar tudo*. O notebook baixa sozinho a base de dados da [Release `base-v1`](https://github.com/atc857/metodos_quanti/releases/tag/base-v1) (cerca de 55 MB) e roda inteiro em poucos minutos. Não é preciso instalar nada.
 
-**No seu computador:** instale o [uv](https://docs.astral.sh/uv/), baixe `enem2023_aula.parquet` da Release para a pasta `dados/` e rode:
+## Slides
 
-```
-uv sync
-uv run jupyter lab
-```
-
-Para guardar a base em outra pasta, crie um arquivo `.env` a partir do `.env.example` e rode com `uv run --env-file .env jupyter lab`.
+[Análise Quantitativa CAEO-2026, v12 (PDF)](slides/Analise_Quantitativa_CAEO-2026_v12.pdf)
 
 ## Dados
 
-Fonte: INEP, [Microdados do ENEM 2023](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem). A base do curso é uma versão reduzida: 25 colunas, todos os 3.933.955 inscritos, **sem o número de inscrição**. Consulte o dicionário de dados do INEP antes de usar qualquer coluna.
+Fonte: INEP, [Microdados do ENEM 2023](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem). A base da palestra é uma versão reduzida: 25 colunas, todos os 3.933.955 inscritos, **sem o número de inscrição**. Consulte o dicionário de dados do INEP antes de usar qualquer coluna.
 
-Para regenerar a base a partir do CSV original (1,7 GB), defina `MQ_MICRODADOS` e `MQ_DADOS` no `.env` e rode:
+Os scripts em [`src/`](src/) registram como a base foi gerada a partir do CSV original do INEP (1,7 GB). Para refazê-la, com o [uv](https://docs.astral.sh/uv/) instalado e as variáveis `MQ_MICRODADOS` (pasta dos microdados) e `MQ_DADOS` (pasta de saída) definidas:
 
 ```
-uv run --env-file .env python src/converter_parquet.py
-uv run --env-file .env python src/gerar_base_aula.py
+uv run --no-project --with duckdb python src/converter_parquet.py
+uv run --no-project --with duckdb python src/gerar_base_aula.py
 ```
 
-`src/legado/` guarda scripts de uma primeira rodada de cálculos, mantidos só como histórico.
+## Versão anterior
+
+O material do curso completo (notebook dos Módulos 1 a 7, notebook do analista e slides v11) está preservado na tag [`curso-v1`](https://github.com/atc857/metodos_quanti/tree/curso-v1).
 
 ## Licença
 
