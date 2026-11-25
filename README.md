@@ -1,6 +1,6 @@
 # Métodos Quantitativos com os microdados do ENEM 2023
 
-Material da palestra *Metodologia científica: tópicos de análise quantitativa*, para gestores do CBMDF (CAEO). Uma análise só, do zero à regressão, com dados reais e, em cada etapa, o prompt para a IA, o código e a verificação independente.
+Material da palestra *Metodologia científica: tópicos de análise quantitativa*, para gestores do CBMDF (CAEO). Uma análise com dados reais do enem 2023 e, em cada etapa, o prompt para a IA, o código e a verificação independente.
 
 [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/atc857/metodos_quanti/blob/main/notebooks/enem2023_analise_v12.ipynb)
 
@@ -41,9 +41,6 @@ uv run --no-project --with duckdb python src/converter_parquet.py
 uv run --no-project --with duckdb python src/gerar_base_aula.py
 ```
 
-## Versão anterior
-
-O material do curso completo (notebook dos Módulos 1 a 7, notebook do analista e slides v11) está preservado na tag [`curso-v1`](https://github.com/atc857/metodos_quanti/tree/curso-v1).
 
 ## Licença
 
